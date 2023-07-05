@@ -25,6 +25,7 @@ namespace Application1.Views
         private void OnNavigateView(object sender, EventArgs e)
         {
             var form = sender as Form;
+            form.FormBorderStyle = FormBorderStyle.Sizable;
             form.MdiParent = this;
             form.Show();
             form.BringToFront();

@@ -16,8 +16,16 @@ namespace Application1.Views
         public CustomerView()
         {
             InitializeComponent();
+
+            this.Load += (sender, e) => BindViewModel();
         }
 
         public object DataContext { get; set; }
+
+        private void BindViewModel()
+        {
+            this.dataGridView2.DataBindings.Add("DataSource", DataContext, "Customers", true, DataSourceUpdateMode.OnPropertyChanged);
+            this.dataGridView1.DataBindings.Add("DataSource", DataContext, "Customers", true, DataSourceUpdateMode.OnPropertyChanged);
+        }
     }
 }
