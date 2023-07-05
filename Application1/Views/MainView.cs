@@ -19,22 +19,17 @@ namespace Application1.Views
         public MainView()
         {
             InitializeComponent();
-
             Manager.OnNavigateView += OnNavigateView;
-            Manager.NavigateView(nameof(HomeView));
         }
 
-        private void OnNavigateView(object view, EventArgs e)
+        private void OnNavigateView(object sender, EventArgs e)
         {
-            var form = view as Form;
+            var form = sender as Form;
             form.MdiParent = this;
             form.Show();
             form.BringToFront();
         }
 
-
         public object DataContext { get; set; }
-
-        private void button1_Click(object sender, EventArgs e) { Manager.NavigateView(nameof(HomeView)); }
     }
 }

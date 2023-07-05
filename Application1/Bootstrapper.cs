@@ -26,6 +26,7 @@ namespace Application1
         {
             Manager.RegisterView(nameof(HomeView), new Module(typeof(HomeView), () => HomeViewModel.Create()));
             Manager.RegisterView(nameof(SettingView), new Module(typeof(SettingView), () => SettingViewModel.Create()));
+            Manager.RegisterView(nameof(CustomerView), new Module(typeof(CustomerView), () => CustomerViewModel.Create()));
         }
 
 
